@@ -53,6 +53,7 @@ body {
     border-radius: 8px;
     background: rgba(255,255,255,0.05);
     box-sizing: border-box;
+    background-color: gray;
 }
 
 #name {
@@ -63,8 +64,8 @@ body {
     border: none;
     outline: none;
     box-sizing: border-box;
-
     overflow: hidden;
+    text-align: center;
 }
 
 #submit, #reset {
