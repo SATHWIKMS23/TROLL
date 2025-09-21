@@ -6,6 +6,8 @@ body {
     margin: 0;
     background-color: black;
     font-family: Arial, sans-serif;
+    padding: 10px; /* prevents overflow on very small screens */
+    box-sizing: border-box;
 }
 
 .main {
@@ -15,29 +17,30 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
-    font-size: 22px;
-    border: 5px solid white;
-    max-width: 90%;
+    font-size: clamp(16px, 2vw, 22px); /* responsive font scaling */
+    border: 3px solid white;
+    max-width: 100%;
+    width: 600px; /* max container width */
     box-sizing: border-box;
 }
 
 .name, .name2 {
     width: 100%;
     border: 0.5px solid white;
-    padding: 15px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 8px 0;
     background-color: gray;
     color: white;
     word-wrap: break-word;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
 }
 
 .form {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px; 
     margin: 15px 0;
     display: flex;
     flex-direction: column;
@@ -49,28 +52,30 @@ body {
     text-align: center;
     border-radius: 8px;
     background: rgba(255,255,255,0.05);
+    box-sizing: border-box;
 }
 
 #name {
     width: 100%;
-    max-width: 280px;
-    margin: 5px 0;
-    padding: 10px;
-    font-size: 18px;
+    padding: 12px;
+    font-size: clamp(14px, 2vw, 18px);
     border-radius: 5px;
     border: none;
     outline: none;
+    box-sizing: border-box;
 }
 
 #submit, #reset {
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     border: none;
     border-radius: 5px;
     background-color: white;
     color: black;
     cursor: pointer;
     transition: 0.3s ease;
+    width: 100%; /* full width on phones */
+    max-width: 200px; /* prevent being too wide on desktops */
 }
 
 #submit:hover, #reset:hover {
@@ -81,28 +86,14 @@ body {
 /* 📱 Mobile styles */
 @media (max-width: 600px) {
     .main {
-        font-size: 20px;   /* bigger text on phone */
-        padding: 20px;
-        border-width: 3px;
+        padding: 15px;
+        border-width: 2px;
     }
-
-    .name, .name2 {
-        font-size: 22px;   /* larger text blocks */
-        padding: 18px;
-    }
-
     .form {
         max-width: 100%;
-        padding: 20px;
+        padding: 15px;
     }
-
-    #name {
-        font-size: 18px;
-        padding: 12px;
-    }
-
     #submit, #reset {
-        font-size: 18px;
-        padding: 14px 24px;
+        padding: 14px;
     }
 }
