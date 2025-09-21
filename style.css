@@ -10,7 +10,7 @@ body {
 
 .main {
     display: flex;
-    flex-direction: column; /* stack by default */
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@ body {
     padding: 20px;
     font-size: 22px;
     border: 5px solid white;
-    max-width: 90%;   /* prevent overflow */
+    max-width: 90%;
     box-sizing: border-box;
 }
 
@@ -30,8 +30,9 @@ body {
     margin: 10px 0;
     background-color: gray;
     color: white;
-    word-wrap: break-word; /* break long names */
+    word-wrap: break-word;
     border-radius: 8px;
+    font-size: 20px;
 }
 
 .form {
@@ -39,7 +40,7 @@ body {
     max-width: 350px;
     margin: 15px 0;
     display: flex;
-    flex-direction: column; /* stack input + button */
+    flex-direction: column;
     gap: 10px;
     justify-content: center;
     align-items: center;
@@ -52,18 +53,18 @@ body {
 
 #name {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
     margin: 5px 0;
-    padding: 8px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 18px;
     border-radius: 5px;
     border: none;
     outline: none;
 }
 
 #submit, #reset {
-    padding: 8px 16px;
-    font-size: 16px;
+    padding: 12px 20px;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
     background-color: white;
@@ -80,17 +81,28 @@ body {
 /* 📱 Mobile styles */
 @media (max-width: 600px) {
     .main {
-        font-size: 18px;
-        padding: 15px;
+        font-size: 20px;   /* bigger text on phone */
+        padding: 20px;
         border-width: 3px;
+    }
+
+    .name, .name2 {
+        font-size: 22px;   /* larger text blocks */
+        padding: 18px;
     }
 
     .form {
         max-width: 100%;
-        padding: 10px;
+        padding: 20px;
     }
 
     #name {
-        max-width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    #submit, #reset {
+        font-size: 18px;
+        padding: 14px 24px;
     }
 }
